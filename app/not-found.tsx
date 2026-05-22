@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 
 import { HeroBackground } from "@/components/marketing/hero-background";
@@ -7,7 +8,7 @@ import { SiteHeader } from "@/components/site/site-header";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/config/site";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "404 — Page not found",
   description: "The page you're looking for doesn't exist or has moved.",
 };
@@ -38,8 +39,8 @@ export default function NotFound() {
               </h1>
 
               <p className="mt-6 text-pretty text-base text-muted-foreground sm:text-lg max-w-xl mx-auto">
-                The page you're looking for doesn't exist or has moved. Head
-                back home or take a look at the project on GitHub.
+                The page you&rsquo;re looking for doesn&rsquo;t exist or has
+                moved. Head back home or take a look at the project on GitHub.
               </p>
 
               <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3">

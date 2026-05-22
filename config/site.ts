@@ -7,9 +7,9 @@ export const siteConfig = {
   url: "https://ui.postpeer.dev",
   ogImage: "/og.png",
   links: {
-    github: "https://github.com/postpeer/postpeer-ui",
+    github: "https://github.com/PostPeer-API/postpeer-ui",
     parent: "https://postpeer.dev",
-    twitter: "https://twitter.com/postpeer",
+    twitter: "https://twitter.com/PostPeerAPI",
   },
   // Indigo / violet — paired with PostPeer's coral on the parent product.
   brandColor: "#7c3aed",

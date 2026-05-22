@@ -58,7 +58,7 @@ export function InstallSnippet() {
         </Button>
       </div>
       <p className="mt-3 text-center text-xs text-muted-foreground">
-        The registry isn't published yet. Once it is, one shadcn add per
+        The registry isn&rsquo;t published yet. Once it is, one shadcn add per
         component drops the source into your repo with nothing to bundle at
         runtime.
       </p>

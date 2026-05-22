@@ -45,7 +45,7 @@ export function Hero() {
           <p className="mt-6 text-pretty text-base text-muted-foreground sm:text-lg md:text-xl max-w-2xl mx-auto">
             React components for posting across platforms. A composer, an
             account selector, a scheduler, and editors that respect each
-            platform's rules. Built on shadcn/ui. Free and open source.
+            platform&rsquo;s rules. Built on shadcn/ui. Free and open source.
           </p>
 
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3">

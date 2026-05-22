@@ -39,4 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local agent tooling (gstack, claude skills) — keep out of the public repo
 .gstack/
+.agents/
+skills-lock.json

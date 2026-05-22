@@ -18,7 +18,7 @@ const DARK_COLORS = {
   color3: "#050410", // deeper near-black
 };
 
-function supportsWebGL2(): boolean {
+function detectWebGL2(): boolean {
   if (typeof document === "undefined") return false;
   try {
     const canvas = document.createElement("canvas");
@@ -26,6 +26,18 @@ function supportsWebGL2(): boolean {
   } catch {
     return false;
   }
+}
+
+// Client-only check via useSyncExternalStore: returns false on the server
+// (matching the SSR fallback) and the real value after hydration, without
+// the setState-in-effect pattern.
+const subscribe = () => () => {};
+function useHasWebGL2(): boolean {
+  return React.useSyncExternalStore(
+    subscribe,
+    detectWebGL2,
+    () => false
+  );
 }
 
 function cssFallback(isDark: boolean): React.CSSProperties {
@@ -40,18 +52,12 @@ function cssFallback(isDark: boolean): React.CSSProperties {
 
 export function HeroBackground() {
   const { resolvedTheme } = useTheme();
-  const [mounted, setMounted] = React.useState(false);
-  const [hasWebGL2, setHasWebGL2] = React.useState(false);
+  const hasWebGL2 = useHasWebGL2();
 
-  React.useEffect(() => {
-    setMounted(true);
-    setHasWebGL2(supportsWebGL2());
-  }, []);
-
-  const isDark = mounted && resolvedTheme === "dark";
+  const isDark = resolvedTheme === "dark";
   const palette = isDark ? DARK_COLORS : LIGHT_COLORS;
 
-  if (!mounted || !hasWebGL2) {
+  if (!hasWebGL2) {
     return <div className="h-full w-full" style={cssFallback(isDark)} />;
   }
 
