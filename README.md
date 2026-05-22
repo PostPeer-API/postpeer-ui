@@ -1,61 +1,20 @@
 # PostPeer UI
 
-> Your scheduling SaaS is already built.
+A free, open-source [shadcn/ui](https://ui.shadcn.com) component registry for
+building social media scheduling and publishing apps. It ships the pieces
+every cross-platform publishing UI needs — a post composer, an account
+selector, a scheduler with a calendar and queue, and editors that respect each
+platform's rules (X, Instagram, LinkedIn, TikTok, YouTube, Threads, Facebook,
+Pinterest). Source-first, no runtime: each component is added straight into
+your codebase so you own it and can fork it.
 
-Drop-in React components for cross-platform social media publishing. Built on
-[shadcn/ui](https://ui.shadcn.com). Free and open source.
-
-This repo contains the marketing site at [ui.postpeer.dev](https://ui.postpeer.dev)
-and the upcoming component registry — a composer, an account selector, a
-scheduler, and editors that respect each platform's rules (X, Instagram,
-LinkedIn, TikTok, YouTube, Threads, Facebook, Pinterest).
-
-## Status
-
-**v0.1** — the marketing site is live. The component registry is not published
-yet. Track progress on the site or watch this repo.
-
-## Stack
-
-- [Next.js 16](https://nextjs.org) (App Router, React 19)
-- [Tailwind CSS v4](https://tailwindcss.com)
-- [shadcn/ui](https://ui.shadcn.com) — `radix-nova` style
-- [next-themes](https://github.com/pacocoursey/next-themes) for dark mode
-- [motion](https://motion.dev) for animations
-- [ogl](https://github.com/oframe/ogl) for the WebGL grainient background
-
-## Development
+Install components the same way you'd install any shadcn component — one
+command per piece drops the source into your repo:
 
 ```bash
-pnpm install
-pnpm dev
+npx shadcn@latest add @postpeer-ui/composer
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
-
-```bash
-pnpm lint    # ESLint
-pnpm build   # production build
-```
-
-## Project layout
-
-```
-app/              Next.js App Router pages
-components/
-  marketing/     Landing-page sections
-  site/          Header, footer, logo, theme
-  ui/            shadcn primitives
-config/          Site + nav config
-lib/             Shared utilities
-registry/        Component registry (coming soon)
-```
-
-## Contributing
-
-The registry is still in design. If you'd like to follow along, watch this
-repo or the [parent project](https://postpeer.dev).
-
-## License
-
-MIT
+> **Status:** the registry isn't published yet. Browse upcoming components at
+> [ui.postpeer.dev](https://ui.postpeer.dev) and watch this repo to be notified
+> when the first release lands.
